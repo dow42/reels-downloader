@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="as">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Reel Downloader</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      width: 70%;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Instagram Reel Downloader</h2>
+  <input type="text" id="reelUrl" placeholder="Instagram Reel URL দিয়ক">
+  <br>
+  <button onclick="downloadReel()">Download</button>
+
+  <script>
+    function downloadReel() {
+      const reelUrl = document.getElementById('reelUrl').value.trim();
+      if (!reelUrl) {
+        alert("অনুগ্ৰহ কৰি Instagram Reel URL দিয়ক");
+        return;
+      }
+
+      const encodedUrl = encodeURIComponent(reelUrl);
+      const apiUrl = `https://instagram-downloader38.p.rapidapi.com/api/v2/downloader?url=`;
+
+      const options = {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-key': '7230306946msh2722a099c614422p1b901cjsn42c1e83edae9',
+          'x-rapidapi-host': 'instagram-downloader38.p.rapidapi.com'
+        }
+      };
+
+      fetch(apiUrl, options)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.media) {
+            window.open(data.media, '_blank');
+          } else {
+            alert("ভিডিঅ’ পোৱা নগ’ল। URL টো সঠিক নে চাওক।");
+          }
+        })
+        .catch(err => {
+          alert("Download ত সমস্যা হৈছে: " + err.message);
+          console.error(err);
+        });
+    }
+  </script>
+</body>
+</html>
