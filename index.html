@@ -36,13 +36,13 @@
       }
 
       const encodedUrl = encodeURIComponent(reelUrl);
-      const apiUrl = `https://instagram-downloader38.p.rapidapi.com/api/v2/downloader?url=`;
+      const apiUrl = `https://instagram-reels-downloader6.p.rapidapi.com/api/v1/video?url=${encodedUrl}`;
 
       const options = {
         method: 'GET',
         headers: {
           'x-rapidapi-key': '7230306946msh2722a099c614422p1b901cjsn42c1e83edae9',
-          'x-rapidapi-host': 'instagram-downloader38.p.rapidapi.com'
+          'x-rapidapi-host': 'instagram-reels-downloader6.p.rapidapi.com'
         }
       };
 
@@ -50,8 +50,8 @@
         .then(res => res.json())
         .then(data => {
           console.log(data);
-          if (data.media) {
-            window.open(data.media, '_blank');
+          if (data.video) {
+            window.open(data.video, '_blank');
           } else {
             alert("ভিডিঅ’ পোৱা নগ’ল। URL টো সঠিক নে চাওক।");
           }
