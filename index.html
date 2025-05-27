@@ -1,88 +1,15 @@
 <!DOCTYPE html>
 <html lang="as">
 <head>
-  <meta charset="UTF-8">
-  <title>Instagram Reel Downloader (Free)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>অসমীয়া ৱেবচাইট</title>
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(to right, #f9f9f9, #e0f7fa);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .container {
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #00796b;
-    }
-
-    input {
-      padding: 12px;
-      width: 100%;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    button {
-      padding: 12px 20px;
-      font-size: 16px;
-      background-color: #00796b;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #004d40;
-    }
-
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #555;
-    }
+    body { font-family: 'Noto Sans Assamese', Arial, sans-serif; text-align: center; margin-top: 50px; }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <h2>Instagram Reel Downloader</h2>
-    <input type="text" id="reelUrl" placeholder="Instagram Reel URL লিখক">
-    <button onclick="redirectToSnapInsta()">Download Now</button>
-    <div class="footer">
-      এইটো Free Tool — Powered by SnapInsta
-    </div>
-  </div>
-
-  <script>
-    function redirectToSnapInsta() {
-      const reelUrl = document.getElementById('reelUrl').value.trim();
-      if (!reelUrl) {
-        alert("অনুগ্ৰহ কৰি Instagram Reel URL লিখক");
-        return;
-      }
-      const encodedUrl = encodeURIComponent(reelUrl);
-      const snapinsta = `https://snapinsta.app/download?url=${encodedUrl}`;
-      window.open(snapinsta, '_blank');
-    }
-  </script>
+  <h1>মোৰ প্ৰথম অসমীয়া ৱেবচাইট</h1>
+  <p>এইয়া হৈছে অসমীয়া ভাষাত লিখা এটা উদাহৰণ।</p>
 </body>
 </html>
