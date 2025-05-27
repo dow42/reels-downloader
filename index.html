@@ -2,64 +2,86 @@
 <html lang="as">
 <head>
   <meta charset="UTF-8">
-  <title>Instagram Reel Downloader</title>
+  <title>Instagram Reel Downloader (Free)</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #f9f9f9, #e0f7fa);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
       padding: 30px;
-      background-color: #f2f2f2;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       text-align: center;
+      max-width: 400px;
+      width: 90%;
     }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #00796b;
+    }
+
     input {
-      padding: 10px;
-      width: 70%;
-      margin-bottom: 10px;
-    }
-    button {
-      padding: 10px 20px;
+      padding: 12px;
+      width: 100%;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
       font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <h2>Instagram Reel Downloader</h2>
-  <input type="text" id="reelUrl" placeholder="Instagram Reel URL দিয়ক">
-  <br>
-  <button onclick="downloadReel()">Download</button>
+
+  <div class="container">
+    <h2>Instagram Reel Downloader</h2>
+    <input type="text" id="reelUrl" placeholder="Instagram Reel URL লিখক">
+    <button onclick="redirectToSnapInsta()">Download Now</button>
+    <div class="footer">
+      এইটো Free Tool — Powered by SnapInsta
+    </div>
+  </div>
 
   <script>
-    function downloadReel() {
+    function redirectToSnapInsta() {
       const reelUrl = document.getElementById('reelUrl').value.trim();
       if (!reelUrl) {
-        alert("অনুগ্ৰহ কৰি Instagram Reel URL দিয়ক");
+        alert("অনুগ্ৰহ কৰি Instagram Reel URL লিখক");
         return;
       }
-
       const encodedUrl = encodeURIComponent(reelUrl);
-      const apiUrl = `https://instagram-reels-downloader6.p.rapidapi.com/api/v1/video?url=${encodedUrl}`;
-
-      const options = {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-key': '7230306946msh2722a099c614422p1b901cjsn42c1e83edae9',
-          'x-rapidapi-host': 'instagram-reels-downloader6.p.rapidapi.com'
-        }
-      };
-
-      fetch(apiUrl, options)
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          if (data.video) {
-            window.open(data.video, '_blank');
-          } else {
-            alert("ভিডিঅ’ পোৱা নগ’ল। URL টো সঠিক নে চাওক।");
-          }
-        })
-        .catch(err => {
-          alert("Download ত সমস্যা হৈছে: " + err.message);
-          console.error(err);
-        });
+      const snapinsta = `https://snapinsta.app/download?url=${encodedUrl}`;
+      window.open(snapinsta, '_blank');
     }
   </script>
 </body>
